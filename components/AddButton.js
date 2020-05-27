@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet, TouchableHighlight, Animated } from 'react-native'
+import { View, StyleSheet, TouchableHighlight, Animated } from 'react-native'
 import { FontAwesome5, Feather } from '@expo/vector-icons'
 
 export default class AddButton extends React.Component {
@@ -67,7 +67,9 @@ export default class AddButton extends React.Component {
     return(
       <View style={{position: 'absolute', alignItems: 'center'}}>
         <Animated.View style={{position: 'absolute', left: thermometerX, top: thermometerY}}>
-          <View style={styles.secondaryButton} >
+          <View
+          style={styles.secondaryButton}
+          onPress={() => this.props.navigation.navigate("DashboardHome")} >
             <Feather name="thermometer" size={24} color="#FFF" />
           </View>
         </Animated.View>
